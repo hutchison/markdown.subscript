@@ -24,11 +24,11 @@ class SubscriptPattern(markdown.inlinepatterns.Pattern):
     """ Return a subscript Element: `C~6~H~12~O~6~' """
     def handleMatch(self, m):
         subsc = m.group(3)
-        
+
         text = subsc
-        
-        el = markdown.etree.Element("sub")
-        el.text = markdown.AtomicString(text)
+
+        el = markdown.util.etree.Element("sub")
+        el.text = markdown.util.AtomicString(text)
         return el
 
 class SubscriptExtension(markdown.Extension):
